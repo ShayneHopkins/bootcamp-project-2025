@@ -145,6 +145,10 @@ header {
   margin-top: 20px;
 }
 
+.web-blog-img {
+  width: 300px;
+}
+
 .card {
   background-color: #0f1422;
   border: 1px solid #1e2536;

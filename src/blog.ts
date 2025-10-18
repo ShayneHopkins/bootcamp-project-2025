@@ -22,7 +22,7 @@ const blogs: Blog[] = [
     description: "This is my website :D",
     image: "./images/galaxy.jpg",
     imageAlt: "Galaxy",
-    slug: "personal-website",
+    slug: "personal-website-blog",
   },
 ];
 
