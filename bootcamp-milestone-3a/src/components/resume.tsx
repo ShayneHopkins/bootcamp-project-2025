@@ -3,7 +3,6 @@ export default function Resume() {
     <main className="container section">
       <h1>Resume</h1>
 
-      {/* Rename to /resume.pdf if you change the actual filename */}
       <a href="/Resume.pdf" download>Download Resume</a>
 
       <div className="resume">
