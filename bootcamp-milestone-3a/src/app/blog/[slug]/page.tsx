@@ -1,4 +1,5 @@
-import blogs, { type Blog } from "../../blogData";
+import BlogModel, { type Blog } from "../../../database/blogSchema";
+import {formatBlogDate} from "../../../database/blogSchema";
 import Link from "next/link";
 
 export default async function BlogPostPage({
@@ -8,7 +9,7 @@ export default async function BlogPostPage({
 }) {
   const { slug } = await params;
 
-  const blog = (blogs as Blog[]).find((b) => b.slug === slug);
+  const blog = await BlogModel.findOne({ slug }).lean<Blog | null>();
 
   if (!blog) {
     return (
@@ -19,10 +20,12 @@ export default async function BlogPostPage({
     );
   }
 
+  const formattedDate = formatBlogDate(blog.date);
+
   return (
     <main className="container section">
       <h1>{blog.title}</h1>
-      <small>{blog.date}</small>
+      <small>{formattedDate}</small>
       <img src={blog.image} alt={blog.imageAlt} className="round" />
       <p className="mt-2">{blog.description}</p>
 

@@ -1,29 +1,21 @@
+
+
+/*
 export interface Blog {
   title: string;
-  date: string;
+  date : Date;
   description: string;
   image: string;
   imageAlt: string;
   slug: string;
 }
 
-const blogs: Blog[] = [
-  {
-    title: "Diet Coke is Awesome",
-    date: "2025-10-16",
-    description: "This is the Diet Coke Blog!",
-    image: "/dietcoke.jpg", 
-    imageAlt: "A picture of a can of Diet Coke",
-    slug: "diet-coke-blog",
-  },
-  {
-    title: "Shayne Hopkins' Personal Website",
-    date: "2025-10-16",
-    description: "This is my website :D",
-    image: "/galaxy.jpg", 
-    imageAlt: "Galaxy",
-    slug: "personal-website",
-  },
-];
-
-export default blogs;
+// helper to format a blog date consistently everywhere
+export function formatBlogDate(date: Date | string): string {
+  return new Date(date).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "2-digit",
+  });
+}
+*/

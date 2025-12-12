@@ -1,4 +1,5 @@
-import type { Blog } from "../app/blogData";
+import BlogModel, { type Blog } from "../database/blogSchema";
+import {formatBlogDate} from "../database/blogSchema";
 import styles from "./blogPreview.module.css";
 import Link from "next/link";
 
@@ -10,6 +11,7 @@ export default function BlogPreview({
   date,
   slug,
 }: Blog) {
+  const formattedDate = formatBlogDate(date);
   return (
     <div className={`${styles.card} card`}>
       <h3>
@@ -17,7 +19,7 @@ export default function BlogPreview({
       </h3>
       <img src={image} alt={imageAlt} className="web-blog-img" />
       <p>{description}</p>
-      <small>{date}</small>
+      <small>{formattedDate}</small>
     </div>
   );
 }
