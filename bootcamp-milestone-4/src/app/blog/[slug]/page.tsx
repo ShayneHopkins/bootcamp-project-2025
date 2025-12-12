@@ -5,6 +5,7 @@ import BlogModel, {
 } from "../../../database/blogSchema";
 import Comment from "../../../components/Comment";
 import Link from "next/link";
+import AddComment from "../../../components/AddComment";
 
 type Params = {
   slug: string;
@@ -60,6 +61,8 @@ export default async function BlogPostPage({
           )}
         </div>
       </section>
+
+      <AddComment slug={blog.slug} />
     </>
   );
 }
